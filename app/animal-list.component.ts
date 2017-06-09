@@ -13,6 +13,10 @@ import { Animal } from './animal.model'
       <option value="cityScape">CityScape</option>
       <option value="creepy">CreepyCaverns</option>
     </optgroup>
+    <optgroup label="Reality">
+      <option value="real">Real</option>
+      <option value="imaginary">Imaginary</option>
+    </optgroup>
     <optgroup label="Type">
       <option value="bird">Bird/Arial</option>
       <option value="mammal">Mammal/Land</option>

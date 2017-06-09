@@ -108,6 +108,22 @@ export class FilterPipe implements PipeTransform {
       }
     return filteredOutput;
     }
+    else if(desiredFilter === "real") {
+      for (var i = 0; i < output.length; i++) {
+        if (output[i].exists === true) {
+          filteredOutput.push(output[i]);
+        }
+      }
+    return filteredOutput;
+    }
+    else if(desiredFilter === "imaginary") {
+      for (var i = 0; i < output.length; i++) {
+        if (output[i].exists === false) {
+          filteredOutput.push(output[i]);
+        }
+      }
+    return filteredOutput;
+    }
     return output
   }
 }

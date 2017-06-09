@@ -5,11 +5,10 @@ import { Animal } from './animal.model'
   selector: 'app-root',
   template: `
   <h1>The Beastiary</h1>
-  <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
 
   <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
 
-
+  <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
 
   <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
   `
