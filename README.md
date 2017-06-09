@@ -20,6 +20,7 @@ You will need the following things properly installed on your computer.
 * _git clone https://github.com/twyststar/Beastiary_
 * _cd Beastiary_
 * _npm install_
+* _bower install_
 
 ## Running / Development
 

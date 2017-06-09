@@ -1,4 +1,4 @@
-<div class="panel" *ngFor="let anilmal of childAnimalList">
+<!-- <div class="panel" *ngFor="let anilmal of childAnimalList">
   <div class="panel-heading">
     <h3>{{animal.name}}</h3>
   </div>
@@ -15,4 +15,17 @@
     <h4>Requires {{animal.caretakers}} caretakers.</h4>
   </div>
 
-</div>
+</div> -->
+<div class="well"*ngIf="childSelectedAnimal">
+    <h3>{{childSelectedAnimal.name}}</h3>
+    <h3>Edit Animal</h3>
+    <input class="form-control" [(ngModel)]="childSelectedAnimal.name">
+    <input class="form-control" [(ngModel)]="childSelectedAnimal.species">
+    <input class="form-control" [(ngModel)]="childSelectedAnimal.sex">
+      <input class="form-control" [(ngModel)]="childSelectedAnimal.age">
+    <input class="form-control" [(ngModel)]="childSelectedAnimal.diet">
+    <input class="form-control" [(ngModel)]="childSelectedAnimal.location">
+    <input class="form-control" [(ngModel)]="childSelectedAnimal.likes">
+    <input class="form-control" [(ngModel)]="childSelectedAnimal.dislikes">
+    <button  (click)="doneButtonClicked()">Done Editing</button>
+  </div>
