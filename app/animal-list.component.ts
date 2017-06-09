@@ -13,7 +13,13 @@ import { Animal } from './animal.model'
       <option value="cityScape">CityScape</option>
       <option value="creepy">CreepyCaverns</option>
     </optgroup>
-    <optgroup label="Filter by Age">
+    <optgroup label="Type">
+      <option value="bird">Bird/Arial</option>
+      <option value="mammal">Mammal/Land</option>
+      <option value="water">Fish/Aquatic</option>
+      <option value="crawly">Reptile/Insect/Creeper</option>
+    </optgroup>
+    <optgroup label="Age">
       <option value="age">Youngest to oldest</option>
       <option value="young">10 yrs or younger</option>
       <option value="old">Older than 10yrs</option>
@@ -23,21 +29,21 @@ import { Animal } from './animal.model'
   </select>
 
   <hr>
-  <div class="panel panel-default" *ngFor="let animal of childAnimalList | filter:filterBySelection">
-    <div class="panel-heading">
+  <div class="panel" *ngFor="let animal of childAnimalList | filter:filterBySelection">
+    <div [class]="animalType(animal)">
       <h3>{{animal.name}}</h3>
     </div>
     <div class="panel-body">
       <ul>
         <li>{{animal.age}} yr old {{animal.sex}} {{animal.species}}</li>
-        <li>Location: {{animal.location}}</li>
         <li>Diet: {{animal.diet}}</li>
         <li>Likes: {{animal.likes}}</li>
         <li>Dislikes: {{animal.dislikes}}</li>
       </ul>
     </div>
     <div class="panel-footer">
-      <h4>Requires {{animal.caretakers}} caretakers.</h4>
+      <h5>Lives in the {{animal.location}} habitat</h5>
+      <h5>Requires {{animal.caretakers}} caretakers.</h5>
     </div>
     <button class="btn btn-default" (click)="editButtonHasBeenClicked(animal)">Edit this animal</button>
   </div>
@@ -56,5 +62,17 @@ export class AnimalListComponent {
 
   editButtonHasBeenClicked(animalToEdit: Animal) {
     this.clickSender.emit(animalToEdit);
+  }
+
+  animalType(currentAnimal){
+    if(currentAnimal.type==="bird"){
+      return "panel-bird panel-heading"
+    } else if(currentAnimal.type==="crawly"){
+      return "panel-heading panel-crawly"
+    } else if (currentAnimal.type==="mammal"){
+      return "panel-heading panel-mammal"
+    } else if (currentAnimal.type === "water"){
+      return "panel-heading panel-water"
+    }
   }
 }

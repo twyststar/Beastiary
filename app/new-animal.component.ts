@@ -17,12 +17,22 @@ import { Animal } from './animal.model'
       <input class="form-control"  #newAge>
       <label>New Animal Diet:</label>
       <input class="form-control"  #newDiet>
+
       <label>New Animal Location:</label>
       <select class="form-control"  #newLocation>
         <option value="Myth">Myth</option>
         <option value="CreepyCaverns">CreepyCaverns</option>
         <option value="CityScape">CityScape</option>
       </select>
+
+      <label>New Animal Type:</label>
+      <select class="form-control"  #newType>
+        <option value="bird">Bird/Arial</option>
+        <option value="mammal">Land/Mammal</option>
+        <option value="crawly">Snake/Insect/Crawly</option>
+        <option value="water">Fish/Aquatic Mammal</option>
+      </select>
+
       <label>Number of Caretakers:</label>
       <input class="form-control"  #newCaretakers>
       <label>New Animal Likes:</label>
@@ -30,7 +40,15 @@ import { Animal } from './animal.model'
       <label>New Animal Dislikes:</label>
       <input class="form-control"  #newDislikes>
 
-      <button (click)="submitForm(newName.value, newSpecies.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newSex.value, newLikes.value, newDislikes.value); newName.value=''; newSpecies.value=''; newSex.value=''; newAge.value=''; newDiet.value=''; newLocation.value=''; newLikes.value=''; newDislikes.value='';">Add new anilmal</button>
+      <label>Real/Imaginary</label>
+      <select class="form-control" #newExists>
+        <option value=true>Real</option>
+        <option value=false>Imaginary</option>
+      </select>
+
+
+
+      <button (click)="submitForm(newName.value, newSpecies.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newSex.value, newLikes.value, newDislikes.value, newType.value, newExists.value); newName.value=''; newSpecies.value=''; newSex.value=''; newAge.value=''; newDiet.value=''; newLocation.value=''; newLikes.value=''; newDislikes.value=''; newType.value=''; newExists.value=''">Add new anilmal</button>
     </div>
   `
 })
@@ -39,8 +57,8 @@ import { Animal } from './animal.model'
 export class NewAnimalComponent {
   @Output() newAnimalSender= new EventEmitter();
 
-  submitForm(species: string, name: string, age:  number, diet: string, location: string, caretakers: number, sex: string, likes: string, dislikes: string,){
-    var newAnimalToAdd: Animal = new Animal(name, species, age, diet, location, caretakers, sex, likes, dislikes);
+  submitForm(species: string, name: string, age:  number, diet: string, location: string, caretakers: number, sex: string, likes: string, dislikes: string, type: string, exists: boolean,){
+    var newAnimalToAdd: Animal = new Animal(name, species, age, diet, location, caretakers, sex, likes, dislikes, type, exists);
     this.newAnimalSender.emit(newAnimalToAdd);
   }
 }

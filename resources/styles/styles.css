@@ -1,3 +1,35 @@
 .panel {
   display: inline-block;
+  border: 1px solid gray;
+}
+
+.panel-bird {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://image.freepik.com/free-photo/blue-sky-with-clouds_1127-282.jpg');
+  background-color: #94cce8;
+}
+
+.panel-mammal {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('http://www.sustainableforests.net/wp-content/uploads/2016/08/6.jpg');
+  background-color: #4aa024;
+  color: white;
+}
+
+.panel-crawly {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://images-na.ssl-images-amazon.com/images/M/MV5BMjI2MTQyMjI3MV5BMl5BanBnXkFtZTcwMzcyNjM3NA@@._V1_CR0,60,640,360_AL_UX477_CR0,0,477,268_AL_.jpg');
+  background-color: #70841a;
+  color: white;
+}
+
+.panel-water {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://hbr.org/resources/images/article_assets/2004/10/SEPT15_03_535621603.jpg');
+  background-color: #62c4c9;
+  color: white;
 }

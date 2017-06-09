@@ -34,3 +34,11 @@ _ Create an application to allow users (zoo employees) to track animals in their
   3. UX/UI
   * Include and modify with bootstrap.
   * Utilize custom styles.
+
+3. Optional Exploration Goals:
+
+  * Add over categories(bird, mammal, creepy, water, imaginary)
+  * Add classes based on over categories
+  * Add origin locations
+  * Create filters and select for add/edit origins 
+  * Make select fields to enter/edit locations, over categories, gender, diet

@@ -15,45 +15,46 @@ export class FilterPipe implements PipeTransform {
         output.push(input[i]);
     }
 
-    if (desiredFilter === "allAnimals"){
+    if (desiredFilter === "allAnimals") {
       return output
     }
-    else if(desiredFilter === "caretakers"){
+    else if (desiredFilter === "caretakers") {
       output.sort(function(a, b){
         return a.caretakers - b.caretakers;
       })
     }
-    else if(desiredFilter === "myth"){
+    else if (desiredFilter === "myth") {
       for (var i = 0; i < output.length; i++) {
-        if(output[i].location === 'Myth'){
+        if (output[i].location === 'Myth'){
           filteredOutput.push(output[i]);
         }
       }
     return filteredOutput;
     }
-    else if(desiredFilter === "cityScape"){
+    else if (desiredFilter === "cityScape"){
       for (var i = 0; i < output.length; i++) {
-        if(output[i].location === 'CityScape'){
-          filteredOutput.push(output[i]);
-        }
-      }
-    return filteredOutput;
-  }else if(desiredFilter === "creepy"){
-      for (var i = 0; i < output.length; i++) {
-        if(output[i].location === 'CreepyCaverns'){
+        if (output[i].location === 'CityScape') {
           filteredOutput.push(output[i]);
         }
       }
     return filteredOutput;
     }
-    else if(desiredFilter === "age"){
+    else if (desiredFilter === "creepy") {
+      for (var i = 0; i < output.length; i++) {
+        if (output[i].location === 'CreepyCaverns') {
+          filteredOutput.push(output[i]);
+        }
+      }
+    return filteredOutput;
+    }
+    else if (desiredFilter === "age") {
       output.sort(function(a, b){
         return a.age - b.age;
-      })
+      });
     }
-    else if(desiredFilter === "young"){
+    else if (desiredFilter === "young") {
       for (var i = 0; i < output.length; i++) {
-        if(output[i].age <= 10){
+        if (output[i].age <= 10){
           filteredOutput.push(output[i]);
         }
       }
@@ -61,15 +62,47 @@ export class FilterPipe implements PipeTransform {
     }
     else if(desiredFilter === "old"){
       for (var i = 0; i < output.length; i++) {
-        if(output[i].age >= 11 && output[i].age <= 100){
+        if (output[i].age >= 11 && output[i].age <= 100){
           filteredOutput.push(output[i]);
         }
       }
     return filteredOutput;
     }
-    else if(desiredFilter === "ageless"){
+    else if(desiredFilter === "ageless") {
       for (var i = 0; i < output.length; i++) {
-        if(output[i].age >= 101){
+        if (output[i].age >= 101) {
+          filteredOutput.push(output[i]);
+        }
+      }
+    return filteredOutput;
+    }
+    else if(desiredFilter === 'bird') {
+      for (var i = 0; i < output.length; i++) {
+        if (output[i].type === 'bird') {
+          filteredOutput.push(output[i]);
+        }
+      }
+    return filteredOutput;
+    }
+    else if(desiredFilter === "mammal") {
+      for (var i = 0; i < output.length; i++) {
+        if (output[i].type === 'mammal') {
+          filteredOutput.push(output[i]);
+        }
+      }
+    return filteredOutput;
+    }
+    else if(desiredFilter === "water") {
+      for (var i = 0; i < output.length; i++) {
+        if (output[i].type === 'water') {
+          filteredOutput.push(output[i]);
+        }
+      }
+    return filteredOutput;
+    }
+    else if(desiredFilter === "crawly") {
+      for (var i = 0; i < output.length; i++) {
+        if (output[i].type === 'crawly') {
           filteredOutput.push(output[i]);
         }
       }
