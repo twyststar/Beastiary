@@ -18,14 +18,18 @@ import { Animal } from './animal.model'
       <label>New Animal Diet:</label>
       <input class="form-control"  #newDiet>
       <label>New Animal Location:</label>
-      <input class="form-control"  #newLocation>
+      <select class="form-control"  #newLocation>
+        <option value="Myth">Myth</option>
+        <option value="CreepyCaverns">CreepyCaverns</option>
+        <option value="CityScape">CityScape</option>
+      </select>
       <label>Number of Caretakers:</label>
       <input class="form-control"  #newCaretakers>
       <label>New Animal Likes:</label>
       <input class="form-control"  #newLikes>
       <label>New Animal Dislikes:</label>
       <input class="form-control"  #newDislikes>
-      
+
       <button (click)="submitForm(newName.value, newSpecies.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newSex.value, newLikes.value, newDislikes.value); newName.value=''; newSpecies.value=''; newSex.value=''; newAge.value=''; newDiet.value=''; newLocation.value=''; newLikes.value=''; newDislikes.value='';">Add new anilmal</button>
     </div>
   `

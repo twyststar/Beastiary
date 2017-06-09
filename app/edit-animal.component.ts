@@ -19,7 +19,12 @@ import { Animal } from './animal.model'
         <label>New Animal Diet:</label>
       <input class="form-control" [(ngModel)]="childSelectedAnimal.diet">
       <label>New Animal Location:</label>
-      <input class="form-control" [(ngModel)]="childSelectedAnimal.location">
+      <select class="form-control"  [(ngModel)]="childSelectedAnimal.location">
+        <option value="Myth">Myth</option>
+        <option value="CreepyCaverns">CreepyCaverns</option>
+        <option value="CityScape">CityScape</option>
+      </select>
+      
       <label>Number of Caretakers:</label>
       <input class="form-control" [(ngModel)]="childSelectedAnimal.caretakers">
       <label>New Animal Likes:</label>

@@ -46,7 +46,35 @@ export class FilterPipe implements PipeTransform {
       }
     return filteredOutput;
     }
-
+    else if(desiredFilter === "age"){
+      output.sort(function(a, b){
+        return a.age - b.age;
+      })
+    }
+    else if(desiredFilter === "young"){
+      for (var i = 0; i < output.length; i++) {
+        if(output[i].age <= 10){
+          filteredOutput.push(output[i]);
+        }
+      }
+    return filteredOutput;
+    }
+    else if(desiredFilter === "old"){
+      for (var i = 0; i < output.length; i++) {
+        if(output[i].age >= 11 && output[i].age <= 100){
+          filteredOutput.push(output[i]);
+        }
+      }
+    return filteredOutput;
+    }
+    else if(desiredFilter === "ageless"){
+      for (var i = 0; i < output.length; i++) {
+        if(output[i].age >= 101){
+          filteredOutput.push(output[i]);
+        }
+      }
+    return filteredOutput;
+    }
     return output
   }
 }

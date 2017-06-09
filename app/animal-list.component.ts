@@ -15,8 +15,7 @@ import { Animal } from './animal.model'
     </optgroup>
     <optgroup label="Filter by Age">
       <option value="age">Youngest to oldest</option>
-      <option value="young">Less than 5yrs</option>
-      <option value="midage">5 to 10 yrs</option>
+      <option value="young">10 yrs or younger</option>
       <option value="old">Older than 10yrs</option>
       <option value="ageless">Ageless</option>
     </optgroup>
