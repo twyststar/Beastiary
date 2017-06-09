@@ -5,7 +5,7 @@ import { Animal } from './animal.model'
   selector: 'new-animal',
   template: `
 
-  <div class="well">
+  <div class="well new">
       <h3>New Animal</h3>
       <label>New Animal Name:</label>
       <input class="form-control"  #newName>
@@ -20,9 +20,10 @@ import { Animal } from './animal.model'
 
       <label>New Animal Location:</label>
       <select class="form-control"  #newLocation>
-        <option value="Myth">Myth</option>
+        <option value="MythicalMansion">Myth</option>
         <option value="CreepyCaverns">CreepyCaverns</option>
         <option value="CityScape">CityScape</option>
+        <option value="Neptune">Neptune</option>
       </select>
 
       <label>New Animal Type:</label>
@@ -48,7 +49,7 @@ import { Animal } from './animal.model'
 
 
 
-      <button (click)="submitForm(newName.value, newSpecies.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newSex.value, newLikes.value, newDislikes.value, newType.value, newExists.value); newName.value=''; newSpecies.value=''; newSex.value=''; newAge.value=''; newDiet.value=''; newLocation.value=''; newLikes.value=''; newDislikes.value=''; newType.value=''; newExists.value=''">Add new anilmal</button>
+      <button class="btn" (click)="submitForm(newName.value, newSpecies.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newSex.value, newLikes.value, newDislikes.value, newType.value, newExists.value); newName.value=''; newSpecies.value=''; newSex.value=''; newAge.value=''; newDiet.value=''; newLocation.value=''; newLikes.value=''; newDislikes.value=''; newType.value=''; newExists.value=''">Add new animal</button>
     </div>
   `
 })

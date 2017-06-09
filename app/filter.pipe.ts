@@ -25,7 +25,7 @@ export class FilterPipe implements PipeTransform {
     }
     else if (desiredFilter === "myth") {
       for (var i = 0; i < output.length; i++) {
-        if (output[i].location === 'Myth'){
+        if (output[i].location === 'MythicalMansion'){
           filteredOutput.push(output[i]);
         }
       }
@@ -34,6 +34,14 @@ export class FilterPipe implements PipeTransform {
     else if (desiredFilter === "cityScape"){
       for (var i = 0; i < output.length; i++) {
         if (output[i].location === 'CityScape') {
+          filteredOutput.push(output[i]);
+        }
+      }
+    return filteredOutput;
+    }
+    else if (desiredFilter === "Neptune"){
+      for (var i = 0; i < output.length; i++) {
+        if (output[i].location === 'Neptune') {
           filteredOutput.push(output[i]);
         }
       }

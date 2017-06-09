@@ -6,11 +6,11 @@ import { AnimalListComponent }  from './animal-list.component';
 import { EditAnimalComponent }  from './edit-animal.component';
 import { NewAnimalComponent }  from './new-animal.component';
 import { FilterPipe } from './filter.pipe';
-
+import { HeaderComponent } from './header.component';
 
 @NgModule({
   imports: [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, AnimalListComponent, EditAnimalComponent, NewAnimalComponent, FilterPipe ],
+  declarations: [ AppComponent, AnimalListComponent, EditAnimalComponent, NewAnimalComponent, FilterPipe, HeaderComponent ],
   bootstrap:    [ AppComponent ]
 })
 

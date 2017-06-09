@@ -5,7 +5,7 @@ import { Animal } from './animal.model'
   selector: 'edit-animal',
   template: `
 
-  <div class="well"*ngIf="childSelectedAnimal">
+  <div [class]="animalType(childSelectedAnimal)"*ngIf="childSelectedAnimal">
       <h3>{{childSelectedAnimal.name}}</h3>
       <h3>Edit Animal</h3>
       <label>New Animal Name:</label>
@@ -21,9 +21,10 @@ import { Animal } from './animal.model'
 
       <label>New Animal Location:</label>
       <select class="form-control"  [(ngModel)]="childSelectedAnimal.location">
-        <option value="Myth">Myth</option>
+        <option value="MythicalMansion">Myth</option>
         <option value="CreepyCaverns">CreepyCaverns</option>
         <option value="CityScape">CityScape</option>
+        <option value="Neptune">Neptune</option>
       </select>
 
       <label>New Animal Type:</label>
@@ -47,8 +48,9 @@ import { Animal } from './animal.model'
         <option value=false>Imaginary</option>
       </select>
 
-      <button  (click)="doneButtonClicked()">Done Editing</button>
+      <button class="btn" (click)="doneButtonClicked()">Done Editing</button>
     </div>
+
   `
 })
 
@@ -58,5 +60,17 @@ export class EditAnimalComponent {
 
   doneButtonClicked(){
     this.doneButtonClickedSender.emit();
+  }
+
+  animalType(currentAnimal){
+    if(currentAnimal.type==="bird"){
+      return "well panel-bird"
+    } else if(currentAnimal.type==="crawly"){
+      return "well panel-crawly"
+    } else if (currentAnimal.type==="mammal"){
+      return "well panel-mammal"
+    } else if (currentAnimal.type === "water"){
+      return "well panel-water"
+    }
   }
 }

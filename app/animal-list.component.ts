@@ -9,8 +9,9 @@ import { Animal } from './animal.model'
 
     <option value="allAnimals">All Animals</option>
     <optgroup label="Location">
-      <option value="myth">Myth</option>
+      <option value="myth">MythicalMansion</option>
       <option value="cityScape">CityScape</option>
+      <option value="Neptune">Neptune</option>
       <option value="creepy">CreepyCaverns</option>
     </optgroup>
     <optgroup label="Reality">
@@ -35,7 +36,9 @@ import { Animal } from './animal.model'
   <hr>
   <div class="panel" *ngFor="let animal of childAnimalList | filter:filterBySelection">
     <div [class]="animalType(animal)">
+    <div class="name">
       <h3>{{animal.name}}</h3>
+    </div>
     </div>
     <div class="panel-body">
       <ul>
